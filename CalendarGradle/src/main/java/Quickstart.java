@@ -1,4 +1,4 @@
-package quickstart;
+
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -21,6 +21,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Quickstart {
+    static final java.util.logging.Logger buggyLogger = java.util.logging.Logger.getLogger(FileDataStoreFactory.class.getName());
+
     /** Application name. */
     private static final String APPLICATION_NAME =
         "Google Calendar API Java Quickstart";
@@ -98,6 +100,7 @@ public class Quickstart {
     }
 
     public static void main(String[] args) throws IOException {
+        buggyLogger.setLevel(java.util.logging.Level.SEVERE);
         // Build a new authorized API client service.
         // Note: Do not confuse this class with the
         //   com.google.api.services.calendar.model.Calendar class.
